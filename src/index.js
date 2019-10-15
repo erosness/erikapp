@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {Menu, data, Cat} from './App';
+import { data, Cat} from './App';
+import {Menu} from './Menu';
+
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<Cat name="Jungle" />, document.getElementById("root"));

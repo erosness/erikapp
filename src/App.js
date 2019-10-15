@@ -4,8 +4,6 @@ import './App.css';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import {Recipe} from './Recipe';
-
 function callout() {
   const string = "Restaurants in Hanalei in operation";
   const urlFriendly = string => string.split(" ");
@@ -66,20 +64,6 @@ const data = [
 
 
 
-function Menu({title, recipes}) {
-  return (
-    <article>
-      <header>
-        <h1>{title}</h1>
-      </header>
-      <div className="recipes">
-        {recipes.map((recipe, i) => (
-          <Recipe key={i} {...recipe} />
-        ))}
-      </div>
-    </article>
-  );
-}
 
 function Cat({ name }) {
   return (
@@ -89,4 +73,4 @@ function Cat({ name }) {
     </React.Fragment>);
 }
 
-export {Menu, data, Cat};
+export { data, Cat};
