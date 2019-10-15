@@ -4,6 +4,7 @@ import './App.css';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import {Recipe} from './Recipe';
 
 function callout() {
   const string = "Restaurants in Hanalei in operation";
@@ -63,24 +64,6 @@ const data = [
   }
 ];
 
-function Recipe({ name, ingredients, steps }) {
-  return (
-    <section id={name.toLowerCase().replace(/ /g, "-")}>
-      <h1>{name}</h1>
-      <ul className="ingredients">
-        {ingredients.map((ingredient, i) => (
-          <li key={i}>{ingredient.name}</li>
-        ))}
-      </ul>
-      <section className="instructions">
-        <h2>Cooking Instructions</h2>
-        {steps.map((step, i) => (
-          <p key={i}>{i}: {step}</p>
-        ))}
-      </section>
-    </section>
-  );
-}
 
 
 function Menu({title, recipes}) {
@@ -98,5 +81,12 @@ function Menu({title, recipes}) {
   );
 }
 
+function Cat({ name }) {
+  return (
+    <React.Fragment>
+      <h1>The cat's name is {name}</h1>
+      <p>He is good!</p>
+    </React.Fragment>);
+}
 
-export {Menu, data};
+export {Menu, data, Cat};
