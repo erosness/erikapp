@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { data, Cat} from './App';
+import {Cat} from './App';
 import {Menu} from './Menu';
+import data from './recipes.json';
 
 import * as serviceWorker from './serviceWorker';
 
