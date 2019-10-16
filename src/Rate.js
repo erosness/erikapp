@@ -14,6 +14,7 @@ const Star = ({ selected = false, onSelect = f => f }) => (
   <FiThumbsDown color={"grey"} onClick={onSelect} />
 );
 
+
 const createArray = length => [...Array(length)];
 
 function StarRating({ totalStars = 5 }) {
@@ -22,10 +23,25 @@ function StarRating({ totalStars = 5 }) {
 
 function Rate({ totalStars = 12, name="Mons" }) {
   const [selectedStars, setSelectedStars] = useState(0);
+
+  const MoreRating = ({ Icon = FiThumbsUp, onSelect = f => f }) => (
+    <Icon
+      class="more"
+      onClick={() => setSelectedStars(selectedStars + 1)}
+    />
+  );
+
+  const LessRating = ({ Icon = FiThumbsUp, onSelect = f => f }) => (
+    <Icon
+      class="less"
+      onClick={() => setSelectedStars(selectedStars - 1)}
+    />
+  );
+
   return (
     <>
       <h1>The cat's name is {name}</h1>
-      <FiThumbsUp class="more"/>
+      <LessRating/>
       {createArray(totalStars).map((n,i) => (
         <Star
           key={i}
@@ -33,7 +49,7 @@ function Rate({ totalStars = 12, name="Mons" }) {
           onSelect={() => setSelectedStars(i + 1)}
         />
       ))}
-      <FiThumbsDown class="less" onClick={console.log("Down-click")}/>
+      <MoreRating/>
       <p>He is good and have {selectedStars} out of {totalStars} stars.</p>
     </>);
 }
