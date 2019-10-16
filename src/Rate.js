@@ -24,17 +24,21 @@ function StarRating({ totalStars = 5 }) {
 function Rate({ totalStars = 12, name="Mons" }) {
   const [selectedStars, setSelectedStars] = useState(0);
 
+  const filterSetSelectedStars = (rate) => {
+    setSelectedStars(Math.max ( Math.min ( rate, totalStars ) , 0 ));
+  }
+
   const MoreRating = ({ Icon = FiThumbsUp, onSelect = f => f }) => (
     <Icon
       class="more"
-      onClick={() => setSelectedStars(selectedStars + 1)}
+      onClick={() => filterSetSelectedStars(selectedStars + 1)}
     />
   );
 
-  const LessRating = ({ Icon = FiThumbsUp, onSelect = f => f }) => (
+  const LessRating = ({ Icon = FiThumbsDown, onSelect = f => f }) => (
     <Icon
       class="less"
-      onClick={() => setSelectedStars(selectedStars - 1)}
+      onClick={() => filterSetSelectedStars(selectedStars - 1)}
     />
   );
 
