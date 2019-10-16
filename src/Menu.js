@@ -1,6 +1,6 @@
 import React from "react";
 import {Recipe} from './Recipe';
-
+import {Cat} from './App'
 
 function Menu({title, recipes}) {
   return (
@@ -13,6 +13,7 @@ function Menu({title, recipes}) {
           <Recipe key={i} {...recipe} />
         ))}
       </div>
+      <Cat name = 'Fritz'/>
     </article>
   );
 }
