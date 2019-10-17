@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import colorData from "./color-data.json";
+import {Rate} from './Rate'
 
-function Color() {
-  const [colors] = useState(colorData);
+
+function Color({title, color, rating}) {
   return(
-    <><p>Text fra color</p></>
+    <section>
+      <div style={{ height: 50, backgroundColor: color, fill: color}}>
+        <h1>{title}</h1>
+        <Rate totalStars={5} rate={rating}/>
+      </div>
+    </section>
   );
 }
 

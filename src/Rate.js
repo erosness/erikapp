@@ -21,8 +21,8 @@ function StarRating({ totalStars = 5 }) {
   return createArray(totalStars).map((n, i) => <Star key={i} />);
 }
 
-function Rate({ totalStars = 12  }) {
-  const [selectedStars, setSelectedStars] = useState(0);
+function Rate({ totalStars = 12, rate = 0  }) {
+  const [selectedStars, setSelectedStars] = useState(rate);
 
   const filterSetSelectedStars = (rate) => {
     setSelectedStars(Math.max ( Math.min ( rate, totalStars ) , 0 ));
