@@ -1,6 +1,7 @@
 import React from "react";
 import {Recipe} from './Recipe';
 import {Cat} from './App'
+import {Color} from './Color';
 
 function Menu({title, recipes}) {
   return (
@@ -9,6 +10,7 @@ function Menu({title, recipes}) {
         <h1>{title}</h1>
       </header>
       <div className="recipes">
+        <Color/>
         {recipes.map((recipe, i) => (
           <Recipe key={i} {...recipe} />
         ))}
