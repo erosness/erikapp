@@ -11,8 +11,8 @@ function Menu({title, recipes}) {
       <header>
         <h1>{title}</h1>
       </header>
-      <div className="recipes">
-        <ColorList colors={colors} />
+      <div>
+        <ColorList className="ratearea" colors={colors} />
         {recipes.map((recipe, i) => (
           <Recipe key={i} {...recipe} />
         ))}

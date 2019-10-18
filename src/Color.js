@@ -5,8 +5,8 @@ import {Rate} from './Rate'
 function Color({title, color, rating}) {
   return(
     <section>
-      <div style={{ height: 50, backgroundColor: color, fill: color}}>
-        <h1>{title}</h1>
+      <div className="ratearea" style={{backgroundColor: color}}>
+        <p>{title}</p>
         <Rate totalStars={5} rate={rating}/>
       </div>
     </section>
